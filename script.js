@@ -7,7 +7,7 @@ document.getElementById('send-button').addEventListener('click', async () => {
 
 async function getChatResponse(message) {
     try {
-        const response = await fetch('https://brandynette.com:443/chatGPT', {
+        const response = await fetch('https://brandynette.com:6969/chatGPT', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

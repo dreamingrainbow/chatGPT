@@ -54,7 +54,7 @@ app.post('/chatGPT', async (req, res) => {
     }
 });
 
-const PORT = 443;
+const PORT = 6969;
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}/`);
 });
