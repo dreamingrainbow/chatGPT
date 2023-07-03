@@ -1,5 +1,6 @@
 const express = require('express');
 const https = require('https');
+const fs = require('fs');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
@@ -7,6 +8,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
+// Handling the POST request to ChatGPT
 app.post('/chatGPT', async (req, res) => {
     const message = req.body.message;
     if (message) {
@@ -54,7 +56,15 @@ app.post('/chatGPT', async (req, res) => {
     }
 });
 
+// HTTPS server setup
+const httpsOptions = {
+    key: fs.readFileSync('/var/cpanel/ssl/cpanel/cpanel.pem'), // Path to your key.pem
+    cert: fs.readFileSync('/var/cpanel/ssl/cpanel/cpanel.pem') // Path to your cert.pem
+};
+
+const server = https.createServer(httpsOptions, app);
+
 const PORT = 6969;
-app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}/`);
+server.listen(PORT, () => {
+    console.log(`Server running at https://localhost:${PORT}/`);
 });

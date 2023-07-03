@@ -5,9 +5,14 @@ document.getElementById('send-button').addEventListener('click', async () => {
     document.getElementById('response-area').textContent = response;
 });
 
+function getURL() {
+    document.getElementById("#get-url").innerHTML = 
+    "The full URL of this page is:<br> " + window.location.href;
+}
+
 async function getChatResponse(message) {
     try {
-        const response = await fetch('https://brandynette.com:6969/chatGPT', {
+        const response = await fetch('https:///chatGPT', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -26,3 +31,4 @@ async function getChatResponse(message) {
         return 'Error fetching data';
     }
 }
+
