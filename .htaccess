@@ -1,0 +1,6 @@
+# Deny access to .env file
+<FilesMatch "^\.env\.gitignore\.json$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+Options -Indexes
