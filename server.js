@@ -66,5 +66,5 @@ const server = https.createServer(httpsOptions, app);
 
 const PORT = 6969;
 server.listen(PORT, () => {
-    console.log(`Server running at https://localhost:${PORT}/`);
+    console.log(`Server running at https://brandynette.com:${PORT}/chatGPT`);
 });

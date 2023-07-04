@@ -6,13 +6,13 @@ document.getElementById('send-button').addEventListener('click', async () => {
 });
 
 function getURL() {
-    document.getElementById("#get-url").innerHTML = 
+    document.getElementById("get-url").innerHTML = 
     "The full URL of this page is:<br> " + window.location.href;
 }
 
 async function getChatResponse(message) {
     try {
-        const response = await fetch('https://brandynette.com/chatGPT', {
+        const response = await fetch('https://brandynette.com/chatGPT/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
