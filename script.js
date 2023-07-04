@@ -12,7 +12,7 @@ function getURL() {
 
 async function getChatResponse(message) {
     try {
-        const response = await fetch('https:///chatGPT', {
+        const response = await fetch('https://brandynette.com/chatGPT', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
